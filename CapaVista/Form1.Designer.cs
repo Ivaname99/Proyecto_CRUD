@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvMostrarClientes = new System.Windows.Forms.DataGridView();
             this.btnCargar = new System.Windows.Forms.Button();
+            this.ClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClienteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCerrar
@@ -102,6 +105,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClienteBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,6 +119,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvMostrarClientes;
         private System.Windows.Forms.Button btnCargar;
+        private System.Windows.Forms.BindingSource ClienteBindingSource;
     }
 }
 
