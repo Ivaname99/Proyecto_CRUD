@@ -26,5 +26,12 @@ namespace CapaLogica
                 return conexionBuilder.ToString();
             }
         }
+
+        public static SqlConnection GetSqlConnection()
+        {
+            SqlConnection conexion = new SqlConnection(ConnectionString);
+            conexion.Open();
+            return conexion;
+        }
     }
 }
