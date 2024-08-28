@@ -78,6 +78,7 @@ namespace CapaLogica
         {
             Clientes clientes = new Clientes();
             clientes.DUI = reader["DUI"] == DBNull.Value ? 0 : Convert.ToInt32(reader["DUI"]);
+            clientes.Nombre = reader["Nombre"] == DBNull.Value ? "" : (String)reader["Nombre"];
             clientes.Apellido = reader["Apellido"] == DBNull.Value ? "" : (String)reader["Apellido"];
             clientes.Telefono = reader["Telefono"] == DBNull.Value ? "" : (String)reader["Telefono"];
             clientes.Correo = reader["Correo"] == DBNull.Value ? "" : (String)reader["Correo"];
