@@ -48,7 +48,7 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(561, 373);
+            this.btnCerrar.Location = new System.Drawing.Point(649, 373);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(83, 38);
             this.btnCerrar.TabIndex = 10;
@@ -85,7 +85,7 @@
             // 
             // btnCargar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(278, 345);
+            this.btnCargar.Location = new System.Drawing.Point(356, 344);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(92, 36);
             this.btnCargar.TabIndex = 11;
@@ -102,7 +102,7 @@
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Location = new System.Drawing.Point(12, 67);
             this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(632, 249);
+            this.dgvClientes.Size = new System.Drawing.Size(720, 249);
             this.dgvClientes.TabIndex = 12;
             // 
             // project_CRUDDataSet
@@ -125,7 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1117, 423);
+            this.ClientSize = new System.Drawing.Size(744, 423);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.btnCerrar);

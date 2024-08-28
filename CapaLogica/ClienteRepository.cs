@@ -21,8 +21,8 @@ namespace CapaLogica
                 selectFrom = selectFrom + "      ,[Apellido] " + "\n";
                 selectFrom = selectFrom + "      ,[Telefono] " + "\n";
                 selectFrom = selectFrom + "      ,[Correo] " + "\n";
-                selectFrom = selectFrom + "      ,[Dirección] " + "\n";
-                selectFrom = selectFrom + "      ,[Género] " + "\n";
+                selectFrom = selectFrom + "      ,[Direccion] " + "\n";
+                selectFrom = selectFrom + "      ,[Genero] " + "\n";
                 selectFrom = selectFrom + "  FROM [dbo].[Clientes]";
 
                 using (SqlCommand comando = new SqlCommand(selectFrom, conexion))
@@ -52,8 +52,8 @@ namespace CapaLogica
                 selectForID = selectForID + "      ,[Apellido] " + "\n";
                 selectForID = selectForID + "      ,[Telefono] " + "\n";
                 selectForID = selectForID + "      ,[Correo] " + "\n";
-                selectForID = selectForID + "      ,[Dirección] " + "\n";
-                selectForID = selectForID + "      ,[Género] " + "\n";
+                selectForID = selectForID + "      ,[Direccion] " + "\n";
+                selectForID = selectForID + "      ,[Genero] " + "\n";
                 selectForID = selectForID + "  FROM [dbo].[Clientes] " + "\n";
                 selectForID = selectForID + $"  Where DUI = @DUI";
 
@@ -77,13 +77,13 @@ namespace CapaLogica
         private Clientes LeerDelDataReader(SqlDataReader reader)
         {
             Clientes clientes = new Clientes();
-            clientes.DUI = reader["DUI"] == DBNull.Value ? 0 : Convert.ToInt32(reader["DUI"]);
+            clientes.DUI = reader["DUI"] == DBNull.Value ? "" : (String)reader["DUI"];
             clientes.Nombre = reader["Nombre"] == DBNull.Value ? "" : (String)reader["Nombre"];
             clientes.Apellido = reader["Apellido"] == DBNull.Value ? "" : (String)reader["Apellido"];
             clientes.Telefono = reader["Telefono"] == DBNull.Value ? "" : (String)reader["Telefono"];
             clientes.Correo = reader["Correo"] == DBNull.Value ? "" : (String)reader["Correo"];
-            clientes.Dirección = reader["Dirección"] == DBNull.Value ? "" : (String)reader["Dirección"];
-            clientes.Género = reader["Género"] == DBNull.Value ? "" : (String)reader["Género"];
+            clientes.Direccion = reader["Direccion"] == DBNull.Value ? "" : (String)reader["Direccion"];
+            clientes.Genero = reader["Genero"] == DBNull.Value ? "" : (String)reader["Genero"];
             return clientes;
         }
 
@@ -93,19 +93,21 @@ namespace CapaLogica
             {
                 String insertInto = "";
                 insertInto = insertInto + "INSERT INTO [dbo].[Clientes] " + "\n";
-                insertInto = insertInto + "           ([Nombre] " + "\n";
+                insertInto = insertInto + "           ([DUI] " + "\n";
+                insertInto = insertInto + "           ,[Nombre] " + "\n";
                 insertInto = insertInto + "           ,[Apellido] " + "\n";
                 insertInto = insertInto + "           ,[Telefono] " + "\n";
                 insertInto = insertInto + "           ,[Correo] " + "\n";
-                insertInto = insertInto + "           ,[Dirección] " + "\n";
-                insertInto = insertInto + "           ,[Género]) " + "\n";
+                insertInto = insertInto + "           ,[Direccion] " + "\n";
+                insertInto = insertInto + "           ,[Genero]) " + "\n";
                 insertInto = insertInto + "     VALUES " + "\n";
-                insertInto = insertInto + "           (@Nombre " + "\n";
+                insertInto = insertInto + "           (@DUI " + "\n";
+                insertInto = insertInto + "           ,@Nombre " + "\n";
                 insertInto = insertInto + "           ,@Apellido " + "\n";
                 insertInto = insertInto + "           ,@Telefono " + "\n";
                 insertInto = insertInto + "           ,@Correo " + "\n";
-                insertInto = insertInto + "           ,@Dirección " + "\n";
-                insertInto = insertInto + "           ,@Género )";
+                insertInto = insertInto + "           ,@Direccion " + "\n";
+                insertInto = insertInto + "           ,@Genero )";
 
                 using (var comando = new SqlCommand(insertInto,conexion))
                 {
@@ -121,12 +123,13 @@ namespace CapaLogica
             {
                 String UpdateForID = "";
                 UpdateForID = UpdateForID + "UPDATE [dbo].[Clientes] " + "\n";
-                UpdateForID = UpdateForID + "   SET [Nombre] = @Nombre " + "\n";
+                UpdateForID = UpdateForID + "   SET [DUI] = @DUI " + "\n";
+                UpdateForID = UpdateForID + "      ,[Nombre] = @Nombre " + "\n";
                 UpdateForID = UpdateForID + "      ,[Apellido] = @Apellido " + "\n";
                 UpdateForID = UpdateForID + "      ,[Telefono] = @Telefono " + "\n";
                 UpdateForID = UpdateForID + "      ,[Correo] = @Correo " + "\n";
-                UpdateForID = UpdateForID + "      ,[Dirección] = @Dirección " + "\n";
-                UpdateForID = UpdateForID + "      ,[Género] = @Género " + "\n";
+                UpdateForID = UpdateForID + "      ,[Direccion] = @Direccion " + "\n";
+                UpdateForID = UpdateForID + "      ,[Genero] = @Genero " + "\n";
                 UpdateForID = UpdateForID + " WHERE DUI = @DUI";
                 using (var comando = new SqlCommand(UpdateForID, conexion))
                 {
@@ -145,8 +148,8 @@ namespace CapaLogica
             comando.Parameters.AddWithValue("Apellido", cliente.Apellido);
             comando.Parameters.AddWithValue("Telefono", cliente.Telefono);
             comando.Parameters.AddWithValue("Correo", cliente.Correo);
-            comando.Parameters.AddWithValue("Direccion", cliente.Dirección);
-            comando.Parameters.AddWithValue("Genero", cliente.Género);
+            comando.Parameters.AddWithValue("Direccion", cliente.Direccion);
+            comando.Parameters.AddWithValue("Genero", cliente.Genero);
             var insertados = comando.ExecuteNonQuery();
             return insertados;
         }
@@ -156,7 +159,7 @@ namespace CapaLogica
             using (var conexion = DataBase.GetSqlConnection())
             {
                 String EliminarCliente = "";
-                EliminarCliente = EliminarCliente + "DELETE FROM [dbo].[DUI] " + "\n";
+                EliminarCliente = EliminarCliente + "DELETE FROM [dbo].[Clientes] " + "\n";
                 EliminarCliente = EliminarCliente + "WHERE DUI = @DUI" + "\n";
                 using (SqlCommand comando = new SqlCommand(EliminarCliente, conexion))
                 {

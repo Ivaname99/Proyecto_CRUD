@@ -34,12 +34,13 @@ namespace CapaVista
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             var cliente = clienteRepository.ObtenerPorID(txtBuscar.Text);
+            txtDUI.Text = (cliente.DUI).ToString();
             txtNombre.Text = cliente.Nombre;
             txtApellido.Text = cliente.Apellido;
             txtTelefono.Text = cliente.Telefono;
             txtCorreo.Text = cliente.Correo;
-            txtDireccion.Text = cliente.Dirección;
-            txtGenero.Text = cliente.Género;
+            txtDireccion.Text = cliente.Direccion;
+            txtGenero.Text = cliente.Genero;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -79,24 +80,30 @@ namespace CapaVista
         }
 
         //////////////////
-        private object ObtenerNuevoCliente()
+        private Clientes ObtenerNuevoCliente()
         {
             var nuevoCliente = new Clientes
             {
+                DUI = txtDUI.Text,
                 Nombre = txtNombre.Text,
                 Apellido = txtApellido.Text,
                 Telefono = txtTelefono.Text,
                 Correo = txtCorreo.Text,
-                Dirección = txtDireccion.Text,
-                Género = txtGenero.Text,
+                Direccion = txtDireccion.Text,
+                Genero = txtGenero.Text,
             };
             return nuevoCliente;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            int borradas = clienteRepository.EliminarCliente(txtDUI);
+            int borradas = clienteRepository.EliminarCliente(txtDUI.ToString());
             MessageBox.Show("Filas eliminadas = " + borradas);
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

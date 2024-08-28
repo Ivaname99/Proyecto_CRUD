@@ -48,6 +48,7 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtDUI = new System.Windows.Forms.TextBox();
+            this.btnCerrar = new System.Windows.Forms.Button();
             dUILabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
@@ -57,6 +58,78 @@
             géneroLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // dUILabel
+            // 
+            dUILabel.AutoSize = true;
+            dUILabel.Location = new System.Drawing.Point(451, 169);
+            dUILabel.Name = "dUILabel";
+            dUILabel.Size = new System.Drawing.Size(26, 13);
+            dUILabel.TabIndex = 30;
+            dUILabel.Text = "DUI";
+            // 
+            // nombreLabel
+            // 
+            nombreLabel.AutoSize = true;
+            nombreLabel.Location = new System.Drawing.Point(95, 109);
+            nombreLabel.Name = "nombreLabel";
+            nombreLabel.Size = new System.Drawing.Size(47, 13);
+            nombreLabel.TabIndex = 32;
+            nombreLabel.Text = "Nombre:";
+            // 
+            // apellidoLabel
+            // 
+            apellidoLabel.AutoSize = true;
+            apellidoLabel.Location = new System.Drawing.Point(95, 146);
+            apellidoLabel.Name = "apellidoLabel";
+            apellidoLabel.Size = new System.Drawing.Size(47, 13);
+            apellidoLabel.TabIndex = 34;
+            apellidoLabel.Text = "Apellido:";
+            // 
+            // telefonoLabel
+            // 
+            telefonoLabel.AutoSize = true;
+            telefonoLabel.Location = new System.Drawing.Point(90, 182);
+            telefonoLabel.Name = "telefonoLabel";
+            telefonoLabel.Size = new System.Drawing.Size(52, 13);
+            telefonoLabel.TabIndex = 36;
+            telefonoLabel.Text = "Telefono:";
+            // 
+            // correoLabel
+            // 
+            correoLabel.AutoSize = true;
+            correoLabel.Location = new System.Drawing.Point(99, 217);
+            correoLabel.Name = "correoLabel";
+            correoLabel.Size = new System.Drawing.Size(41, 13);
+            correoLabel.TabIndex = 38;
+            correoLabel.Text = "Correo:";
+            // 
+            // direcciónLabel
+            // 
+            direcciónLabel.AutoSize = true;
+            direcciónLabel.Location = new System.Drawing.Point(85, 253);
+            direcciónLabel.Name = "direcciónLabel";
+            direcciónLabel.Size = new System.Drawing.Size(55, 13);
+            direcciónLabel.TabIndex = 40;
+            direcciónLabel.Text = "Dirección:";
+            // 
+            // géneroLabel
+            // 
+            géneroLabel.AutoSize = true;
+            géneroLabel.Location = new System.Drawing.Point(95, 290);
+            géneroLabel.Name = "géneroLabel";
+            géneroLabel.Size = new System.Drawing.Size(45, 13);
+            géneroLabel.TabIndex = 42;
+            géneroLabel.Text = "Género:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(111, 71);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(29, 13);
+            label1.TabIndex = 30;
+            label1.Text = "DUI:";
             // 
             // btnBuscar
             // 
@@ -68,30 +141,12 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // dUILabel
-            // 
-            dUILabel.AutoSize = true;
-            dUILabel.Location = new System.Drawing.Point(451, 169);
-            dUILabel.Name = "dUILabel";
-            dUILabel.Size = new System.Drawing.Size(26, 13);
-            dUILabel.TabIndex = 30;
-            dUILabel.Text = "DUI";
-            // 
             // txtBuscar
             // 
             this.txtBuscar.Location = new System.Drawing.Point(483, 166);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(100, 20);
             this.txtBuscar.TabIndex = 31;
-            // 
-            // nombreLabel
-            // 
-            nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(95, 109);
-            nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(47, 13);
-            nombreLabel.TabIndex = 32;
-            nombreLabel.Text = "Nombre:";
             // 
             // txtNombre
             // 
@@ -100,30 +155,12 @@
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 33;
             // 
-            // apellidoLabel
-            // 
-            apellidoLabel.AutoSize = true;
-            apellidoLabel.Location = new System.Drawing.Point(95, 146);
-            apellidoLabel.Name = "apellidoLabel";
-            apellidoLabel.Size = new System.Drawing.Size(47, 13);
-            apellidoLabel.TabIndex = 34;
-            apellidoLabel.Text = "Apellido:";
-            // 
             // txtApellido
             // 
             this.txtApellido.Location = new System.Drawing.Point(151, 143);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(100, 20);
             this.txtApellido.TabIndex = 35;
-            // 
-            // telefonoLabel
-            // 
-            telefonoLabel.AutoSize = true;
-            telefonoLabel.Location = new System.Drawing.Point(90, 182);
-            telefonoLabel.Name = "telefonoLabel";
-            telefonoLabel.Size = new System.Drawing.Size(52, 13);
-            telefonoLabel.TabIndex = 36;
-            telefonoLabel.Text = "Telefono:";
             // 
             // txtTelefono
             // 
@@ -132,15 +169,6 @@
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
             this.txtTelefono.TabIndex = 37;
             // 
-            // correoLabel
-            // 
-            correoLabel.AutoSize = true;
-            correoLabel.Location = new System.Drawing.Point(99, 217);
-            correoLabel.Name = "correoLabel";
-            correoLabel.Size = new System.Drawing.Size(41, 13);
-            correoLabel.TabIndex = 38;
-            correoLabel.Text = "Correo:";
-            // 
             // txtCorreo
             // 
             this.txtCorreo.Location = new System.Drawing.Point(151, 214);
@@ -148,30 +176,12 @@
             this.txtCorreo.Size = new System.Drawing.Size(100, 20);
             this.txtCorreo.TabIndex = 39;
             // 
-            // direcciónLabel
-            // 
-            direcciónLabel.AutoSize = true;
-            direcciónLabel.Location = new System.Drawing.Point(85, 253);
-            direcciónLabel.Name = "direcciónLabel";
-            direcciónLabel.Size = new System.Drawing.Size(55, 13);
-            direcciónLabel.TabIndex = 40;
-            direcciónLabel.Text = "Dirección:";
-            // 
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(151, 250);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(100, 20);
             this.txtDireccion.TabIndex = 41;
-            // 
-            // géneroLabel
-            // 
-            géneroLabel.AutoSize = true;
-            géneroLabel.Location = new System.Drawing.Point(95, 290);
-            géneroLabel.Name = "géneroLabel";
-            géneroLabel.Size = new System.Drawing.Size(45, 13);
-            géneroLabel.TabIndex = 42;
-            géneroLabel.Text = "Género:";
             // 
             // txtGenero
             // 
@@ -212,25 +222,28 @@
             // 
             // txtDUI
             // 
+            this.txtDUI.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtDUI.Location = new System.Drawing.Point(151, 68);
             this.txtDUI.Name = "txtDUI";
             this.txtDUI.Size = new System.Drawing.Size(100, 20);
             this.txtDUI.TabIndex = 48;
             // 
-            // label1
+            // btnCerrar
             // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(111, 71);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(29, 13);
-            label1.TabIndex = 30;
-            label1.Text = "DUI:";
+            this.btnCerrar.Location = new System.Drawing.Point(692, 404);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(96, 33);
+            this.btnCerrar.TabIndex = 49;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // RegistroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.txtDUI);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEliminar);
@@ -273,5 +286,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtDUI;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }
