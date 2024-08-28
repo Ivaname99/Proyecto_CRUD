@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaLogica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,16 @@ namespace CapaVista
 {
     public partial class Form1 : Form
     {
+        ClienteRepository clienteRepository = new ClienteRepository();
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+            var Clientes = clienteRepository.ObtenerTodos();
+            dgvMostrarClientes.DataSource = Clientes;
         }
     }
 }

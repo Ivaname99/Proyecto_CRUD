@@ -90,6 +90,7 @@
             this.btnCargar.TabIndex = 11;
             this.btnCargar.Text = "Cargar Datos";
             this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
             // Form1
             // 
