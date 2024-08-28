@@ -86,5 +86,7 @@ namespace CapaLogica
             clientes.Género = reader["Género"] == DBNull.Value ? "" : (String)reader["Género"];
             return clientes;
         }
+
+
     }
 }

@@ -30,37 +30,45 @@
         {
             this.components = new System.ComponentModel.Container();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnModificarDatos = new System.Windows.Forms.Button();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvMostrarClientes = new System.Windows.Forms.DataGridView();
             this.btnCargar = new System.Windows.Forms.Button();
+            this.clientesTableAdapter = new CapaVista.Project_CRUDDataSetTableAdapters.ClientesTableAdapter();
+            this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.ClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarClientes)).BeginInit();
+            this.project_CRUDDataSet = new CapaVista.Project_CRUDDataSet();
+            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tableAdapterManager = new CapaVista.Project_CRUDDataSetTableAdapters.TableAdapterManager();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.project_CRUDDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(712, 415);
+            this.btnCerrar.Location = new System.Drawing.Point(561, 373);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCerrar.Size = new System.Drawing.Size(83, 38);
             this.btnCerrar.TabIndex = 10;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // btnAgregar
+            // btnModificarDatos
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(12, 415);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 9;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnModificarDatos.Location = new System.Drawing.Point(12, 373);
+            this.btnModificarDatos.Name = "btnModificarDatos";
+            this.btnModificarDatos.Size = new System.Drawing.Size(83, 38);
+            this.btnModificarDatos.TabIndex = 9;
+            this.btnModificarDatos.Text = "Modificar Datos";
+            this.btnModificarDatos.UseVisualStyleBackColor = true;
+            this.btnModificarDatos.Click += new System.EventHandler(this.btnModificarDatos_Click);
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(473, 359);
+            this.txtFiltro.Location = new System.Drawing.Point(203, 27);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(100, 20);
             this.txtFiltro.TabIndex = 8;
@@ -69,45 +77,69 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(421, 362);
+            this.label1.Location = new System.Drawing.Point(151, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Filtro ID:";
             // 
-            // dgvMostrarClientes
-            // 
-            this.dgvMostrarClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMostrarClientes.Location = new System.Drawing.Point(12, 12);
-            this.dgvMostrarClientes.Name = "dgvMostrarClientes";
-            this.dgvMostrarClientes.Size = new System.Drawing.Size(776, 298);
-            this.dgvMostrarClientes.TabIndex = 6;
-            // 
             // btnCargar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(218, 356);
+            this.btnCargar.Location = new System.Drawing.Point(278, 345);
             this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(75, 23);
+            this.btnCargar.Size = new System.Drawing.Size(92, 36);
             this.btnCargar.TabIndex = 11;
             this.btnCargar.Text = "Cargar Datos";
             this.btnCargar.UseVisualStyleBackColor = true;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
+            // clientesTableAdapter
+            // 
+            this.clientesTableAdapter.ClearBeforeFill = true;
+            // 
+            // dgvClientes
+            // 
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Location = new System.Drawing.Point(12, 67);
+            this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.Size = new System.Drawing.Size(632, 249);
+            this.dgvClientes.TabIndex = 12;
+            // 
+            // project_CRUDDataSet
+            // 
+            this.project_CRUDDataSet.DataSetName = "Project_CRUDDataSet";
+            this.project_CRUDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clientesBindingSource
+            // 
+            this.clientesBindingSource.DataMember = "Clientes";
+            this.clientesBindingSource.DataSource = this.project_CRUDDataSet;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ClientesTableAdapter = this.clientesTableAdapter;
+            this.tableAdapterManager.UpdateOrder = CapaVista.Project_CRUDDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1117, 423);
+            this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.btnModificarDatos);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgvMostrarClientes);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarClientes)).EndInit();
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.project_CRUDDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,12 +148,16 @@
         #endregion
 
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnModificarDatos;
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvMostrarClientes;
         private System.Windows.Forms.Button btnCargar;
+        private Project_CRUDDataSetTableAdapters.ClientesTableAdapter clientesTableAdapter;
+        private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.BindingSource ClienteBindingSource;
+        private Project_CRUDDataSet project_CRUDDataSet;
+        private System.Windows.Forms.BindingSource clientesBindingSource;
+        private Project_CRUDDataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }
 
