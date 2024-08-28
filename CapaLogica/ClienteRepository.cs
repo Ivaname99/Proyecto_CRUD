@@ -150,5 +150,21 @@ namespace CapaLogica
             var insertados = comando.ExecuteNonQuery();
             return insertados;
         }
+
+        public int EliminarCliente(string id)
+        {
+            using (var conexion = DataBase.GetSqlConnection())
+            {
+                String EliminarCliente = "";
+                EliminarCliente = EliminarCliente + "DELETE FROM [dbo].[DUI] " + "\n";
+                EliminarCliente = EliminarCliente + "WHERE DUI = @DUI" + "\n";
+                using (SqlCommand comando = new SqlCommand(EliminarCliente, conexion))
+                {
+                    comando.Parameters.AddWithValue("@DUI", id);
+                    int elimindos = comando.ExecuteNonQuery();
+                    return elimindos;
+                }
+            }
+        }
     }
 }
