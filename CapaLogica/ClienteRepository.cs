@@ -10,6 +10,7 @@ namespace CapaLogica
 {
     public class ClienteRepository
     {
+        ///////////////
         public List<Clientes> ObtenerTodos()
         {
             using (var conexion = DataBase.GetSqlConnection())
@@ -60,7 +61,6 @@ namespace CapaLogica
                 {
                     comando.Parameters.AddWithValue("DUI", id);
 
-
                     var reader = comando.ExecuteReader();
                     Clientes clientes = null;
                     
@@ -87,6 +87,68 @@ namespace CapaLogica
             return clientes;
         }
 
+        public int InsertarCliente(Clientes cliente)
+        {
+            using (var conexion = DataBase.GetSqlConnection())
+            {
+                String insertInto = "";
+                insertInto = insertInto + "INSERT INTO [dbo].[Clientes] " + "\n";
+                insertInto = insertInto + "           ([Nombre] " + "\n";
+                insertInto = insertInto + "           ,[Apellido] " + "\n";
+                insertInto = insertInto + "           ,[Telefono] " + "\n";
+                insertInto = insertInto + "           ,[Correo] " + "\n";
+                insertInto = insertInto + "           ,[Dirección] " + "\n";
+                insertInto = insertInto + "           ,[Género]) " + "\n";
+                insertInto = insertInto + "     VALUES " + "\n";
+                insertInto = insertInto + "           (@Nombre " + "\n";
+                insertInto = insertInto + "           ,@Apellido " + "\n";
+                insertInto = insertInto + "           ,@Telefono " + "\n";
+                insertInto = insertInto + "           ,@Correo " + "\n";
+                insertInto = insertInto + "           ,@Dirección " + "\n";
+                insertInto = insertInto + "           ,@Género )";
 
+                using (var comando = new SqlCommand(insertInto,conexion))
+                {
+                    int insertados = parametrosCliente(cliente, comando);
+                    return insertados;
+                }
+            }
+        }
+
+        public int ActualizarCliente(Clientes cliente)
+        {
+            using (var conexion = DataBase.GetSqlConnection())
+            {
+                String UpdateForID = "";
+                UpdateForID = UpdateForID + "UPDATE [dbo].[Clientes] " + "\n";
+                UpdateForID = UpdateForID + "   SET [Nombre] = @Nombre " + "\n";
+                UpdateForID = UpdateForID + "      ,[Apellido] = @Apellido " + "\n";
+                UpdateForID = UpdateForID + "      ,[Telefono] = @Telefono " + "\n";
+                UpdateForID = UpdateForID + "      ,[Correo] = @Correo " + "\n";
+                UpdateForID = UpdateForID + "      ,[Dirección] = @Dirección " + "\n";
+                UpdateForID = UpdateForID + "      ,[Género] = @Género " + "\n";
+                UpdateForID = UpdateForID + " WHERE DUI = @DUI";
+                using (var comando = new SqlCommand(UpdateForID, conexion))
+                {
+
+                    int actualizados = parametrosCliente(cliente, comando);
+
+                    return actualizados;
+                }
+            }
+        }
+
+        private int parametrosCliente(Clientes cliente, SqlCommand comando)
+        {
+            comando.Parameters.AddWithValue("DUI", cliente.DUI);
+            comando.Parameters.AddWithValue("Nombre", cliente.Nombre);
+            comando.Parameters.AddWithValue("Apellido", cliente.Apellido);
+            comando.Parameters.AddWithValue("Telefono", cliente.Telefono);
+            comando.Parameters.AddWithValue("Correo", cliente.Correo);
+            comando.Parameters.AddWithValue("Direccion", cliente.Dirección);
+            comando.Parameters.AddWithValue("Genero", cliente.Género);
+            var insertados = comando.ExecuteNonQuery();
+            return insertados;
+        }
     }
 }

@@ -35,6 +35,7 @@
             System.Windows.Forms.Label correoLabel;
             System.Windows.Forms.Label direcciónLabel;
             System.Windows.Forms.Label géneroLabel;
+            System.Windows.Forms.Label label1;
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -46,6 +47,7 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.txtDUI = new System.Windows.Forms.TextBox();
             dUILabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
@@ -53,6 +55,7 @@
             correoLabel = new System.Windows.Forms.Label();
             direcciónLabel = new System.Windows.Forms.Label();
             géneroLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnBuscar
@@ -185,6 +188,7 @@
             this.btnEditar.TabIndex = 45;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -194,6 +198,7 @@
             this.btnEliminar.TabIndex = 46;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnGuardar
             // 
@@ -205,15 +210,33 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // txtDUI
+            // 
+            this.txtDUI.Location = new System.Drawing.Point(151, 68);
+            this.txtDUI.Name = "txtDUI";
+            this.txtDUI.Size = new System.Drawing.Size(100, 20);
+            this.txtDUI.TabIndex = 48;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(111, 71);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(29, 13);
+            label1.TabIndex = 30;
+            label1.Text = "DUI:";
+            // 
             // RegistroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtDUI);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(label1);
             this.Controls.Add(dUILabel);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(nombreLabel);
@@ -249,5 +272,6 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.TextBox txtDUI;
     }
 }
