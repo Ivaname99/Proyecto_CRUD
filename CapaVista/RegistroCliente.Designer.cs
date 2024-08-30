@@ -62,7 +62,7 @@
             // dUILabel
             // 
             dUILabel.AutoSize = true;
-            dUILabel.Location = new System.Drawing.Point(451, 169);
+            dUILabel.Location = new System.Drawing.Point(452, 146);
             dUILabel.Name = "dUILabel";
             dUILabel.Size = new System.Drawing.Size(26, 13);
             dUILabel.TabIndex = 30;
@@ -71,7 +71,7 @@
             // nombreLabel
             // 
             nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(95, 109);
+            nombreLabel.Location = new System.Drawing.Point(103, 78);
             nombreLabel.Name = "nombreLabel";
             nombreLabel.Size = new System.Drawing.Size(47, 13);
             nombreLabel.TabIndex = 32;
@@ -80,7 +80,7 @@
             // apellidoLabel
             // 
             apellidoLabel.AutoSize = true;
-            apellidoLabel.Location = new System.Drawing.Point(95, 146);
+            apellidoLabel.Location = new System.Drawing.Point(103, 115);
             apellidoLabel.Name = "apellidoLabel";
             apellidoLabel.Size = new System.Drawing.Size(47, 13);
             apellidoLabel.TabIndex = 34;
@@ -89,7 +89,7 @@
             // telefonoLabel
             // 
             telefonoLabel.AutoSize = true;
-            telefonoLabel.Location = new System.Drawing.Point(90, 182);
+            telefonoLabel.Location = new System.Drawing.Point(98, 151);
             telefonoLabel.Name = "telefonoLabel";
             telefonoLabel.Size = new System.Drawing.Size(52, 13);
             telefonoLabel.TabIndex = 36;
@@ -98,7 +98,7 @@
             // correoLabel
             // 
             correoLabel.AutoSize = true;
-            correoLabel.Location = new System.Drawing.Point(99, 217);
+            correoLabel.Location = new System.Drawing.Point(107, 186);
             correoLabel.Name = "correoLabel";
             correoLabel.Size = new System.Drawing.Size(41, 13);
             correoLabel.TabIndex = 38;
@@ -107,7 +107,7 @@
             // direcciónLabel
             // 
             direcciónLabel.AutoSize = true;
-            direcciónLabel.Location = new System.Drawing.Point(85, 253);
+            direcciónLabel.Location = new System.Drawing.Point(93, 222);
             direcciónLabel.Name = "direcciónLabel";
             direcciónLabel.Size = new System.Drawing.Size(55, 13);
             direcciónLabel.TabIndex = 40;
@@ -116,7 +116,7 @@
             // géneroLabel
             // 
             géneroLabel.AutoSize = true;
-            géneroLabel.Location = new System.Drawing.Point(95, 290);
+            géneroLabel.Location = new System.Drawing.Point(103, 259);
             géneroLabel.Name = "géneroLabel";
             géneroLabel.Size = new System.Drawing.Size(45, 13);
             géneroLabel.TabIndex = 42;
@@ -125,15 +125,16 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(111, 71);
+            label1.Location = new System.Drawing.Point(119, 40);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(29, 13);
             label1.TabIndex = 30;
             label1.Text = "DUI:";
+            label1.Visible = false;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(494, 207);
+            this.btnBuscar.Location = new System.Drawing.Point(495, 184);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 44;
@@ -143,56 +144,56 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(483, 166);
+            this.txtBuscar.Location = new System.Drawing.Point(484, 143);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(100, 20);
             this.txtBuscar.TabIndex = 31;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(151, 106);
+            this.txtNombre.Location = new System.Drawing.Point(159, 75);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 33;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(151, 143);
+            this.txtApellido.Location = new System.Drawing.Point(159, 112);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(100, 20);
             this.txtApellido.TabIndex = 35;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(151, 179);
+            this.txtTelefono.Location = new System.Drawing.Point(159, 148);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
             this.txtTelefono.TabIndex = 37;
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(151, 214);
+            this.txtCorreo.Location = new System.Drawing.Point(159, 183);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(100, 20);
             this.txtCorreo.TabIndex = 39;
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(151, 250);
+            this.txtDireccion.Location = new System.Drawing.Point(159, 219);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(100, 20);
             this.txtDireccion.TabIndex = 41;
             // 
             // txtGenero
             // 
-            this.txtGenero.Location = new System.Drawing.Point(151, 287);
+            this.txtGenero.Location = new System.Drawing.Point(159, 256);
             this.txtGenero.Name = "txtGenero";
             this.txtGenero.Size = new System.Drawing.Size(100, 20);
             this.txtGenero.TabIndex = 43;
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(210, 364);
+            this.btnEditar.Location = new System.Drawing.Point(218, 333);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 45;
@@ -202,7 +203,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(98, 414);
+            this.btnEliminar.Location = new System.Drawing.Point(106, 383);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(187, 24);
             this.btnEliminar.TabIndex = 46;
@@ -212,7 +213,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(98, 364);
+            this.btnGuardar.Location = new System.Drawing.Point(106, 333);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 47;
@@ -223,14 +224,16 @@
             // txtDUI
             // 
             this.txtDUI.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtDUI.Location = new System.Drawing.Point(151, 68);
+            this.txtDUI.Location = new System.Drawing.Point(159, 37);
             this.txtDUI.Name = "txtDUI";
+            this.txtDUI.ReadOnly = true;
             this.txtDUI.Size = new System.Drawing.Size(100, 20);
             this.txtDUI.TabIndex = 48;
+            this.txtDUI.Visible = false;
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(692, 404);
+            this.btnCerrar.Location = new System.Drawing.Point(692, 405);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(96, 33);
             this.btnCerrar.TabIndex = 49;

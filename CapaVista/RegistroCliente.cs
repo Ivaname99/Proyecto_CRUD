@@ -97,7 +97,7 @@ namespace CapaVista
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            int borradas = clienteRepository.EliminarCliente(txtDUI.ToString());
+            int borradas = clienteRepository.EliminarCliente(txtDUI.Text);
             MessageBox.Show("Filas eliminadas = " + borradas);
         }
 

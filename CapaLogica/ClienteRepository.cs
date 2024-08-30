@@ -158,7 +158,9 @@ namespace CapaLogica
         {
             using (var conexion = DataBase.GetSqlConnection())
             {
-                String EliminarCliente = "DELETE FROM [dbo].[Clientes] WHERE DUI = @DUI";
+                String EliminarCliente = "";
+                EliminarCliente = EliminarCliente + "DELETE FROM [dbo].[Clientes] " + "\n";
+                EliminarCliente = EliminarCliente + "      WHERE DUI = @DUI";
                 using (SqlCommand comando = new SqlCommand(EliminarCliente, conexion))
                 {
                     comando.Parameters.AddWithValue("@DUI", id);
