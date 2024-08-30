@@ -4,11 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace CapaVista
 {
@@ -23,18 +25,20 @@ namespace CapaVista
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
-            var Clientes = clienteRepository.ObtenerTodos();
-            dgvClientes.DataSource = Clientes;
+            Cargar();
         }
 
         private void txtFiltro_TextChanged(object sender, EventArgs e)
         {
-            // var filtro = Customers.FindAll( X => X.CompanyName.StartsWith(tbFiltro.Text));
-            // dataGrid.DataSource = filtro;
-
-            //List<Clientes> Clientes = new List<Clientes>();
-            //var filtro = Clientes.FindAll(X => X.Nombre.StartsWith(txtFiltro.Text));
-            //dgvMostrarClientes.DataSource = filtro;
+            //Filtro();
+            //if (txtFiltro.Text != "")
+            //{
+            //    filtro();
+            //}
+            //else
+            //{
+            //    cargar();
+            //}
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -53,6 +57,24 @@ namespace CapaVista
         {
             RegistroCliente objRegistroCliente = new RegistroCliente();
             objRegistroCliente.ShowDialog();
+        }
+
+        private void Filtro()
+        {
+            //using (var conexion = DataBase.GetSqlConnection())
+            //{
+            //    string idcliente = txtFiltro.Text;
+            //    using (var comando = new SqlCommand(idcliente, conexion))
+            //    { 
+            //        dgvClientes.DataSource = clienteRepository.ObtenerPorID(idcliente);
+            //    }
+            //}
+        }
+
+        private void Cargar()
+        {
+            var Clientes = clienteRepository.ObtenerTodos();
+            dgvClientes.DataSource = Clientes;
         }
     }
 }

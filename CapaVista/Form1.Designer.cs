@@ -40,6 +40,8 @@
             this.project_CRUDDataSet = new CapaVista.Project_CRUDDataSet();
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager = new CapaVista.Project_CRUDDataSetTableAdapters.TableAdapterManager();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.project_CRUDDataSet)).BeginInit();
@@ -48,7 +50,7 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(649, 373);
+            this.btnCerrar.Location = new System.Drawing.Point(649, 400);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(83, 38);
             this.btnCerrar.TabIndex = 10;
@@ -58,7 +60,7 @@
             // 
             // btnModificarDatos
             // 
-            this.btnModificarDatos.Location = new System.Drawing.Point(12, 373);
+            this.btnModificarDatos.Location = new System.Drawing.Point(12, 400);
             this.btnModificarDatos.Name = "btnModificarDatos";
             this.btnModificarDatos.Size = new System.Drawing.Size(83, 38);
             this.btnModificarDatos.TabIndex = 9;
@@ -68,7 +70,7 @@
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(203, 27);
+            this.txtFiltro.Location = new System.Drawing.Point(203, 54);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(100, 20);
             this.txtFiltro.TabIndex = 8;
@@ -77,7 +79,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(151, 30);
+            this.label1.Location = new System.Drawing.Point(151, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 7;
@@ -85,7 +87,7 @@
             // 
             // btnCargar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(356, 344);
+            this.btnCargar.Location = new System.Drawing.Point(326, 376);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(92, 36);
             this.btnCargar.TabIndex = 11;
@@ -100,7 +102,7 @@
             // dgvClientes
             // 
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(12, 67);
+            this.dgvClientes.Location = new System.Drawing.Point(12, 94);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.Size = new System.Drawing.Size(720, 249);
             this.dgvClientes.TabIndex = 12;
@@ -121,17 +123,40 @@
             this.tableAdapterManager.ClientesTableAdapter = this.clientesTableAdapter;
             this.tableAdapterManager.UpdateOrder = CapaVista.Project_CRUDDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(366, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(366, 43);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Administrador de Clientes";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.textBox1.Location = new System.Drawing.Point(361, 4);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(377, 54);
+            this.textBox1.TabIndex = 14;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 423);
+            this.BackColor = System.Drawing.Color.DarkViolet;
+            this.ClientSize = new System.Drawing.Size(744, 450);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnModificarDatos);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -158,6 +183,8 @@
         private Project_CRUDDataSet project_CRUDDataSet;
         private System.Windows.Forms.BindingSource clientesBindingSource;
         private Project_CRUDDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
