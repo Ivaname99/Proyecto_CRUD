@@ -63,7 +63,7 @@ namespace CapaLogica
 
                     var reader = comando.ExecuteReader();
                     Clientes clientes = null;
-                    
+
                     if (reader.Read())
                     {
                         clientes = LeerDelDataReader(reader);
@@ -109,7 +109,7 @@ namespace CapaLogica
                 insertInto = insertInto + "           ,@Direccion " + "\n";
                 insertInto = insertInto + "           ,@Genero )";
 
-                using (var comando = new SqlCommand(insertInto,conexion))
+                using (var comando = new SqlCommand(insertInto, conexion))
                 {
                     int insertados = parametrosCliente(cliente, comando);
                     return insertados;
@@ -166,6 +166,38 @@ namespace CapaLogica
                     comando.Parameters.AddWithValue("@DUI", id);
                     int elimindos = comando.ExecuteNonQuery();
                     return elimindos;
+                }
+            }
+        }
+
+        public List<Clientes> ObtenerLista(string filtro)
+        {
+            using (var conexion = DataBase.GetSqlConnection())
+            {
+                String ListaClientes = "";
+                ListaClientes = ListaClientes + "SELECT [DUI] " + "\n";
+                ListaClientes = ListaClientes + "      ,[Nombre] " + "\n";
+                ListaClientes = ListaClientes + "      ,[Apellido] " + "\n";
+                ListaClientes = ListaClientes + "      ,[Telefono] " + "\n";
+                ListaClientes = ListaClientes + "      ,[Correo] " + "\n";
+                ListaClientes = ListaClientes + "      ,[Direccion] " + "\n";
+                ListaClientes = ListaClientes + "      ,[Genero] " + "\n";
+                ListaClientes = ListaClientes + "  FROM [dbo].[Clientes] " + "\n";
+                ListaClientes = ListaClientes + "  WHERE Nombre LIKE @Filtro";
+                using (SqlCommand comando = new SqlCommand(ListaClientes, conexion))
+                {
+                    comando.Parameters.AddWithValue("Filtro", filtro);
+
+                    SqlDataReader reader = comando.ExecuteReader();
+                    List<Clientes> clientes = new List<Clientes>();
+
+                    while (reader.Read())
+                    {
+                        var cliente = LeerDelDataReader(reader);
+                        clientes.Add(cliente);
+                    }
+
+                    return clientes;
                 }
             }
         }

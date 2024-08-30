@@ -30,15 +30,14 @@ namespace CapaVista
 
         private void txtFiltro_TextChanged(object sender, EventArgs e)
         {
-            //Filtro();
-            //if (txtFiltro.Text != "")
-            //{
-            //    filtro();
-            //}
-            //else
-            //{
-            //    cargar();
-            //}
+            if (txtFiltro.Text != "")
+            {
+                Filtro();
+            }
+            else
+            {
+                Cargar();
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -61,14 +60,10 @@ namespace CapaVista
 
         private void Filtro()
         {
-            //using (var conexion = DataBase.GetSqlConnection())
-            //{
-            //    string idcliente = txtFiltro.Text;
-            //    using (var comando = new SqlCommand(idcliente, conexion))
-            //    { 
-            //        dgvClientes.DataSource = clienteRepository.ObtenerPorID(idcliente);
-            //    }
-            //}
+            string idCliente = txtFiltro.Text;
+
+            dgvClientes.DataSource = clienteRepository.ObtenerLista(idCliente);
+            
         }
 
         private void Cargar()
