@@ -98,7 +98,7 @@ namespace CapaVista
             };
             return nuevoCliente;
         }
-
+         
         // Elimina un cliente existende en la base de datos
         private void btnEliminar_Click(object sender, EventArgs e)
         {
