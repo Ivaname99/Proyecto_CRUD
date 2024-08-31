@@ -23,11 +23,13 @@ namespace CapaVista
             InitializeComponent();
         }
 
+        // llama al metodo para cargar todos los clientes en el DataGridView
         private void btnCargar_Click(object sender, EventArgs e)
         {
             Cargar();
         }
 
+        // Llama a un metodo para filtrar los clientes según el texto ingresado
         private void txtFiltro_TextChanged(object sender, EventArgs e)
         {
             if (txtFiltro.Text != "")
@@ -42,11 +44,10 @@ namespace CapaVista
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'project_CRUDDataSet.Clientes' Puede moverla o quitarla según sea necesario.
-            //this.clientesTableAdapter.Fill(this.project_CRUDDataSet.Clientes);
 
         }
 
+        // Cierra la ventana
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -55,9 +56,10 @@ namespace CapaVista
         private void btnModificarDatos_Click(object sender, EventArgs e)
         {
             RegistroCliente objRegistroCliente = new RegistroCliente();
-            objRegistroCliente.ShowDialog();
+            objRegistroCliente.ShowDialog(); // Abre el formulario para modificar los datos del cliente
         }
 
+        // Filtra los clientes según el texto ingresado
         private void Filtro()
         {
             string idCliente = txtFiltro.Text;
@@ -66,6 +68,7 @@ namespace CapaVista
             
         }
 
+        // Carga todos los clientes si el filtro está vacío
         private void Cargar()
         {
             var Clientes = clienteRepository.ObtenerTodos();

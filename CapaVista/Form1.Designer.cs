@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnModificarDatos = new System.Windows.Forms.Button();
             this.txtFiltro = new System.Windows.Forms.TextBox();
@@ -50,9 +51,10 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(649, 400);
+            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.Location = new System.Drawing.Point(640, 393);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(83, 38);
+            this.btnCerrar.Size = new System.Drawing.Size(92, 45);
             this.btnCerrar.TabIndex = 10;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -60,9 +62,10 @@
             // 
             // btnModificarDatos
             // 
-            this.btnModificarDatos.Location = new System.Drawing.Point(12, 400);
+            this.btnModificarDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarDatos.Location = new System.Drawing.Point(12, 393);
             this.btnModificarDatos.Name = "btnModificarDatos";
-            this.btnModificarDatos.Size = new System.Drawing.Size(83, 38);
+            this.btnModificarDatos.Size = new System.Drawing.Size(92, 45);
             this.btnModificarDatos.TabIndex = 9;
             this.btnModificarDatos.Text = "Modificar Datos";
             this.btnModificarDatos.UseVisualStyleBackColor = true;
@@ -70,26 +73,31 @@
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Location = new System.Drawing.Point(203, 54);
+            this.txtFiltro.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.txtFiltro.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtFiltro.Location = new System.Drawing.Point(12, 58);
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(100, 20);
+            this.txtFiltro.Size = new System.Drawing.Size(156, 20);
             this.txtFiltro.TabIndex = 8;
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(151, 57);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Window;
+            this.label1.Location = new System.Drawing.Point(12, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.Size = new System.Drawing.Size(124, 16);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Filtro ID:";
+            this.label1.Text = "Filtrado por nombre";
             // 
             // btnCargar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(326, 376);
+            this.btnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargar.Location = new System.Drawing.Point(316, 369);
             this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(92, 36);
+            this.btnCargar.Size = new System.Drawing.Size(109, 44);
             this.btnCargar.TabIndex = 11;
             this.btnCargar.Text = "Cargar Datos";
             this.btnCargar.UseVisualStyleBackColor = true;
@@ -102,9 +110,9 @@
             // dgvClientes
             // 
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(12, 94);
+            this.dgvClientes.Location = new System.Drawing.Point(12, 84);
             this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(720, 249);
+            this.dgvClientes.Size = new System.Drawing.Size(720, 259);
             this.dgvClientes.TabIndex = 12;
             // 
             // project_CRUDDataSet
@@ -147,7 +155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkViolet;
+            this.BackColor = System.Drawing.Color.Purple;
             this.ClientSize = new System.Drawing.Size(744, 450);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvClientes);
@@ -157,9 +165,10 @@
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Tabla de Clientes";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteBindingSource)).EndInit();

@@ -10,11 +10,12 @@ namespace CapaLogica
 {
     public class ClienteRepository
     {
-        ///////////////
-        public List<Clientes> ObtenerTodos()
+        #region ObtenerTodos
+        public List<Clientes> ObtenerTodos() // Método para obtener todos los registros de la tabla Clientes
         {
-            using (var conexion = DataBase.GetSqlConnection())
+            using (var conexion = DataBase.GetSqlConnection()) // se abre una nueva conexion a SQL
             {
+                // Consulta SQL para seleccionar todos los campos de la tabla Clientes
                 String selectFrom = "";
                 selectFrom = selectFrom + "SELECT [DUI] " + "\n";
                 selectFrom = selectFrom + "      ,[Nombre] " + "\n";
@@ -25,11 +26,13 @@ namespace CapaLogica
                 selectFrom = selectFrom + "      ,[Genero] " + "\n";
                 selectFrom = selectFrom + "  FROM [dbo].[Clientes]";
 
-                using (SqlCommand comando = new SqlCommand(selectFrom, conexion))
+                using (SqlCommand comando = new SqlCommand(selectFrom, conexion)) // se crea un comando para ejecutar la consulta
                 {
-                    SqlDataReader reader = comando.ExecuteReader();
-                    List<Clientes> Clientes = new List<Clientes>();
+                    
+                    SqlDataReader reader = comando.ExecuteReader();// se crea la variable de este tipo para leer los datos
+                    List<Clientes> Clientes = new List<Clientes>(); // esta lista almacenara los datos
 
+                    // recorre cada registro y los convierte en un objeto de tipo Clientes
                     while (reader.Read())
                     {
                         var clientes = LeerDelDataReader(reader);
@@ -39,13 +42,15 @@ namespace CapaLogica
                 }
             }
         }
+        #endregion
 
-        public Clientes ObtenerPorID(string id)
+        #region ObtenerPorID
+        public Clientes ObtenerPorID(string id) // Método para obtener un cliente por su DUI (identificador único)
         {
 
-            using (var conexion = DataBase.GetSqlConnection())
+            using (var conexion = DataBase.GetSqlConnection()) // Establece la conexión con la base de datos
             {
-
+                // Consulta SQL para seleccionar un cliente por su DUI
                 String selectForID = "";
                 selectForID = selectForID + "SELECT [DUI] " + "\n";
                 selectForID = selectForID + "      ,[Nombre] " + "\n";
@@ -57,7 +62,7 @@ namespace CapaLogica
                 selectForID = selectForID + "  FROM [dbo].[Clientes] " + "\n";
                 selectForID = selectForID + $"  Where DUI = @DUI";
 
-                using (SqlCommand comando = new SqlCommand(selectForID, conexion))
+                using (SqlCommand comando = new SqlCommand(selectForID, conexion)) // se crea un comando para ejecutar la consulta
                 {
                     comando.Parameters.AddWithValue("DUI", id);
 
@@ -73,7 +78,10 @@ namespace CapaLogica
 
             }
         }
+        #endregion
 
+        #region LeerDelDataReader
+        // Método privado para leer los datos de un SqlDataReader y convertirlos en un objeto  de tipo Clientes
         private Clientes LeerDelDataReader(SqlDataReader reader)
         {
             Clientes clientes = new Clientes();
@@ -86,11 +94,15 @@ namespace CapaLogica
             clientes.Genero = reader["Genero"] == DBNull.Value ? "" : (String)reader["Genero"];
             return clientes;
         }
+        #endregion
 
+        #region InsertarCliente
+        // Método para insertar un nuevo cliente en la base de datos
         public int InsertarCliente(Clientes cliente)
         {
             using (var conexion = DataBase.GetSqlConnection())
             {
+                // Consulta SQL para insertar un nuevo cliente
                 String insertInto = "";
                 insertInto = insertInto + "INSERT INTO [dbo].[Clientes] " + "\n";
                 insertInto = insertInto + "           ([DUI] " + "\n";
@@ -109,18 +121,22 @@ namespace CapaLogica
                 insertInto = insertInto + "           ,@Direccion " + "\n";
                 insertInto = insertInto + "           ,@Genero )";
 
-                using (var comando = new SqlCommand(insertInto, conexion))
+                using (var comando = new SqlCommand(insertInto, conexion)) // se crea un comando para ejecutar la consulta
                 {
                     int insertados = parametrosCliente(cliente, comando);
                     return insertados;
                 }
             }
         }
+        #endregion
 
+        #region ActualizarCliente
+        // Método para actualizar un cliente existente en la base de datos
         public int ActualizarCliente(Clientes cliente)
         {
             using (var conexion = DataBase.GetSqlConnection())
             {
+                // Consulta SQL para actualizar un cliente por su DUI
                 String UpdateForID = "";
                 UpdateForID = UpdateForID + "UPDATE [dbo].[Clientes] " + "\n";
                 UpdateForID = UpdateForID + "   SET [DUI] = @DUI " + "\n";
@@ -131,7 +147,8 @@ namespace CapaLogica
                 UpdateForID = UpdateForID + "      ,[Direccion] = @Direccion " + "\n";
                 UpdateForID = UpdateForID + "      ,[Genero] = @Genero " + "\n";
                 UpdateForID = UpdateForID + " WHERE DUI = @DUI";
-                using (var comando = new SqlCommand(UpdateForID, conexion))
+
+                using (var comando = new SqlCommand(UpdateForID, conexion)) // se crea un comando para ejecutar la consulta
                 {
 
                     int actualizados = parametrosCliente(cliente, comando);
@@ -140,7 +157,10 @@ namespace CapaLogica
                 }
             }
         }
+        #endregion
 
+        #region parametrosCliente
+        // Método privado para asignar los parámetros del cliente a un comando SQL
         private int parametrosCliente(Clientes cliente, SqlCommand comando)
         {
             comando.Parameters.AddWithValue("DUI", cliente.DUI);
@@ -150,30 +170,39 @@ namespace CapaLogica
             comando.Parameters.AddWithValue("Correo", cliente.Correo);
             comando.Parameters.AddWithValue("Direccion", cliente.Direccion);
             comando.Parameters.AddWithValue("Genero", cliente.Genero);
-            var insertados = comando.ExecuteNonQuery();
+            var insertados = comando.ExecuteNonQuery(); // Ejecuta el comando SQL
             return insertados;
         }
+        #endregion
 
+        #region EliminarCliente
+        // Método para eliminar un cliente de la base de datos
         public int EliminarCliente(string id)
         {
             using (var conexion = DataBase.GetSqlConnection())
             {
+                // Consulta SQL para eliminar un cliente por su DUI
                 String EliminarCliente = "";
                 EliminarCliente = EliminarCliente + "DELETE FROM [dbo].[Clientes] " + "\n";
                 EliminarCliente = EliminarCliente + "      WHERE DUI = @DUI";
-                using (SqlCommand comando = new SqlCommand(EliminarCliente, conexion))
+
+                using (SqlCommand comando = new SqlCommand(EliminarCliente, conexion))// se crea un comando para ejecutar la consulta
                 {
                     comando.Parameters.AddWithValue("@DUI", id);
-                    int elimindos = comando.ExecuteNonQuery();
+                    int elimindos = comando.ExecuteNonQuery(); // Ejecuta el comando SQL
                     return elimindos;
                 }
             }
         }
+        #endregion
 
+        #region ObtenerLista
+        // Método para obtener una lista de clientes filtrados por nombre
         public List<Clientes> ObtenerLista(string filtro)
         {
             using (var conexion = DataBase.GetSqlConnection())
             {
+                // Consulta SQL para obtener clientes filtrados por nombre
                 String ListaClientes = "";
                 ListaClientes = ListaClientes + "SELECT [DUI] " + "\n";
                 ListaClientes = ListaClientes + "      ,[Nombre] " + "\n";
@@ -186,9 +215,9 @@ namespace CapaLogica
                 ListaClientes = ListaClientes + "  WHERE Nombre LIKE @Filtro";
                 using (SqlCommand comando = new SqlCommand(ListaClientes, conexion))
                 {
-                    comando.Parameters.AddWithValue("Filtro", filtro);
+                    comando.Parameters.AddWithValue("Filtro", "%" + filtro + "%"); // se le agrega '%' al inicio y al final del filtro para que la búsqueda incluya cualquier palabra que contenga lo ingresado, ya sea en el inicio, en el medio o al final
 
-                    SqlDataReader reader = comando.ExecuteReader();
+                    SqlDataReader reader = comando.ExecuteReader(); 
                     List<Clientes> clientes = new List<Clientes>();
 
                     while (reader.Read())
@@ -201,5 +230,6 @@ namespace CapaLogica
                 }
             }
         }
+        #endregion
     }
 }

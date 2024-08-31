@@ -105,10 +105,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
-      <Project>{ee686f70-70d3-4e3a-9c27-b82a92918cae}</Project>
-      <Name>CapaDatos</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CapaEntidades\CapaEntidades.csproj">
       <Project>{a548ece6-2d54-4063-812e-3d610226e658}</Project>
       <Name>CapaEntidades</Name>
@@ -117,6 +113,9 @@
       <Project>{29d7443b-cc7a-476e-9038-ada1f4cbee88}</Project>
       <Name>CapaLogica</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

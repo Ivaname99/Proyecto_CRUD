@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace CapaEntidades
 {
+    // Definimos los parametros que nos permitirà leer y modificar los datos
+    // Los metodos {get; set;} nos permitiran obtener, leer y modificar el valor de las propiedades
     public class Clientes
     {
-        public string DUI { get; set; }
+        public string DUI { get; set; } // Definimos la propiedad para obtener el DUI y así los demás
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Telefono { get; set; }

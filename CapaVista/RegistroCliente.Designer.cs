@@ -36,6 +36,7 @@
             System.Windows.Forms.Label direcciónLabel;
             System.Windows.Forms.Label géneroLabel;
             System.Windows.Forms.Label label1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroCliente));
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -75,7 +76,7 @@
             // nombreLabel
             // 
             nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(64, 32);
+            nombreLabel.Location = new System.Drawing.Point(66, 66);
             nombreLabel.Name = "nombreLabel";
             nombreLabel.Size = new System.Drawing.Size(47, 13);
             nombreLabel.TabIndex = 32;
@@ -84,7 +85,7 @@
             // apellidoLabel
             // 
             apellidoLabel.AutoSize = true;
-            apellidoLabel.Location = new System.Drawing.Point(64, 69);
+            apellidoLabel.Location = new System.Drawing.Point(66, 103);
             apellidoLabel.Name = "apellidoLabel";
             apellidoLabel.Size = new System.Drawing.Size(47, 13);
             apellidoLabel.TabIndex = 34;
@@ -93,7 +94,7 @@
             // telefonoLabel
             // 
             telefonoLabel.AutoSize = true;
-            telefonoLabel.Location = new System.Drawing.Point(59, 105);
+            telefonoLabel.Location = new System.Drawing.Point(61, 139);
             telefonoLabel.Name = "telefonoLabel";
             telefonoLabel.Size = new System.Drawing.Size(52, 13);
             telefonoLabel.TabIndex = 36;
@@ -102,7 +103,7 @@
             // correoLabel
             // 
             correoLabel.AutoSize = true;
-            correoLabel.Location = new System.Drawing.Point(68, 140);
+            correoLabel.Location = new System.Drawing.Point(70, 174);
             correoLabel.Name = "correoLabel";
             correoLabel.Size = new System.Drawing.Size(41, 13);
             correoLabel.TabIndex = 38;
@@ -111,7 +112,7 @@
             // direcciónLabel
             // 
             direcciónLabel.AutoSize = true;
-            direcciónLabel.Location = new System.Drawing.Point(54, 176);
+            direcciónLabel.Location = new System.Drawing.Point(56, 210);
             direcciónLabel.Name = "direcciónLabel";
             direcciónLabel.Size = new System.Drawing.Size(55, 13);
             direcciónLabel.TabIndex = 40;
@@ -120,7 +121,7 @@
             // géneroLabel
             // 
             géneroLabel.AutoSize = true;
-            géneroLabel.Location = new System.Drawing.Point(64, 213);
+            géneroLabel.Location = new System.Drawing.Point(66, 247);
             géneroLabel.Name = "géneroLabel";
             géneroLabel.Size = new System.Drawing.Size(45, 13);
             géneroLabel.TabIndex = 42;
@@ -129,12 +130,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(80, 13);
+            label1.Location = new System.Drawing.Point(82, 30);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(29, 13);
             label1.TabIndex = 30;
             label1.Text = "DUI:";
-            label1.Visible = false;
             // 
             // btnBuscar
             // 
@@ -151,46 +151,46 @@
             this.txtBuscar.Location = new System.Drawing.Point(45, 37);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(100, 20);
-            this.txtBuscar.TabIndex = 31;
+            this.txtBuscar.TabIndex = 48;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(120, 29);
+            this.txtNombre.Location = new System.Drawing.Point(122, 63);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 33;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(120, 66);
+            this.txtApellido.Location = new System.Drawing.Point(122, 100);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(100, 20);
             this.txtApellido.TabIndex = 35;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(120, 102);
+            this.txtTelefono.Location = new System.Drawing.Point(122, 136);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
             this.txtTelefono.TabIndex = 37;
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(120, 137);
+            this.txtCorreo.Location = new System.Drawing.Point(122, 171);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(100, 20);
             this.txtCorreo.TabIndex = 39;
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(120, 173);
+            this.txtDireccion.Location = new System.Drawing.Point(122, 207);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(100, 20);
             this.txtDireccion.TabIndex = 41;
             // 
             // txtGenero
             // 
-            this.txtGenero.Location = new System.Drawing.Point(120, 210);
+            this.txtGenero.Location = new System.Drawing.Point(122, 244);
             this.txtGenero.Name = "txtGenero";
             this.txtGenero.Size = new System.Drawing.Size(100, 20);
             this.txtGenero.TabIndex = 43;
@@ -221,19 +221,17 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 47;
-            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Text = "Insertar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtDUI
             // 
             this.txtDUI.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtDUI.Location = new System.Drawing.Point(120, 10);
+            this.txtDUI.Location = new System.Drawing.Point(122, 27);
             this.txtDUI.Name = "txtDUI";
-            this.txtDUI.ReadOnly = true;
             this.txtDUI.Size = new System.Drawing.Size(100, 20);
-            this.txtDUI.TabIndex = 48;
-            this.txtDUI.Visible = false;
+            this.txtDUI.TabIndex = 31;
             // 
             // btnCerrar
             // 
@@ -270,6 +268,7 @@
             this.groupBox1.Size = new System.Drawing.Size(333, 379);
             this.groupBox1.TabIndex = 50;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Formulario";
             // 
             // groupBox2
             // 
@@ -295,8 +294,10 @@
             this.Controls.Add(this.btnCerrar);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegistroCliente";
-            this.Text = "FormRegistro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Formulario de Registro";
             this.Load += new System.EventHandler(this.RegistroCliente_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

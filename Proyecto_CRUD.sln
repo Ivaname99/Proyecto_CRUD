@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaDatos", "CapaDatos\CapaDatos.csproj", "{EE686F70-70D3-4E3A-9C27-B82A92918CAE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaEntidades", "CapaEntidades\CapaEntidades.csproj", "{A548ECE6-2D54-4063-812E-3D610226E658}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaLogica", "CapaLogica\CapaLogica.csproj", "{29D7443B-CC7A-476E-9038-ADA1F4CBEE88}"
@@ -17,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EE686F70-70D3-4E3A-9C27-B82A92918CAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EE686F70-70D3-4E3A-9C27-B82A92918CAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EE686F70-70D3-4E3A-9C27-B82A92918CAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EE686F70-70D3-4E3A-9C27-B82A92918CAE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A548ECE6-2D54-4063-812E-3D610226E658}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A548ECE6-2D54-4063-812E-3D610226E658}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A548ECE6-2D54-4063-812E-3D610226E658}.Release|Any CPU.ActiveCfg = Release|Any CPU

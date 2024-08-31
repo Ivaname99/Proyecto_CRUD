@@ -31,10 +31,11 @@ namespace CapaVista
             
         }
 
+        // Llena los campos con los datos del cliente
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             var cliente = clienteRepository.ObtenerPorID(txtBuscar.Text);
-            txtDUI.Text = (cliente.DUI).ToString();
+            txtDUI.Text = cliente.DUI;
             txtNombre.Text = cliente.Nombre;
             txtApellido.Text = cliente.Apellido;
             txtTelefono.Text = cliente.Telefono;
@@ -43,6 +44,7 @@ namespace CapaVista
             txtGenero.Text = cliente.Genero;
         }
 
+        // Guarda el nuevo cliente en la base de datos
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             var resultado = 0;
@@ -51,14 +53,15 @@ namespace CapaVista
             if (validarCampoNull(nuevoCliente) == false)
             {
                 resultado = clienteRepository.InsertarCliente(nuevoCliente);
-                MessageBox.Show("Guardado " + "Filas modificadas = " + resultado);
+                MessageBox.Show("Guardado exitosamente");
             }
             else
             {
                 MessageBox.Show("Faltan campos por completar");
             }
         }
-        //////////////////
+
+        // Verifica si algún campo del objeto está vacío
         private bool validarCampoNull(object objeto)
         {
             foreach (PropertyInfo property in objeto.GetType().GetProperties())
@@ -71,15 +74,16 @@ namespace CapaVista
             }
             return false;
         }
-        //////////////////
+
+        // Edita un cliente existente en la base de datos
         private void btnEditar_Click(object sender, EventArgs e)
         {
             var actualizarCliente = ObtenerNuevoCliente();
             int actualizadas = clienteRepository.ActualizarCliente(actualizarCliente);
-            MessageBox.Show($"Filas actualizadas = {actualizadas}");
+            MessageBox.Show("Actualizaciòn exitosa");
         }
 
-        //////////////////
+        // Obtiene los datos del formulario y los convierte en un objeto Cliente
         private Clientes ObtenerNuevoCliente()
         {
             var nuevoCliente = new Clientes
@@ -95,12 +99,14 @@ namespace CapaVista
             return nuevoCliente;
         }
 
+        // Elimina un cliente existende en la base de datos
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             int borradas = clienteRepository.EliminarCliente(txtDUI.Text);
-            MessageBox.Show("Filas eliminadas = " + borradas);
+            MessageBox.Show("Filas eliminadas exitosamente");
         }
 
+        // cierra la ventana
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
